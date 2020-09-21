@@ -1,0 +1,7 @@
+{
+    "azfunctions": {
+        "negotiate": "https://whiteboardfn.azurewebsites.net/api/negotiate?",
+        "createroom": "https://whiteboardfn.azurewebsites.net/api/CreateRoom?",
+        "sendmessage": "https://whiteboardfn.azurewebsites.net/api/SendMessage?"
+    }
+}

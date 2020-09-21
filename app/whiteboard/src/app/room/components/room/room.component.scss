@@ -1,0 +1,10 @@
+.room_container {
+    display: flex;
+    app-tools {
+        width: 40px;
+        margin-right: 10px;
+    }
+    app-board {
+        width: 100%;
+    }
+}
