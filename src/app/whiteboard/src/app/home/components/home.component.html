@@ -1,0 +1,15 @@
+<div class="container">
+    <canvas #canvas class="background"></canvas>
+    <div class="box">
+        <div class="content">
+            <div>
+                <button mat-stroked-button color="primary" (click)="create()">Create a Whiteboard Room</button>
+            </div>
+            <div>or</div>
+            <div>
+                <input type="text" placeholder="Room ID" [(ngModel)]="roomid" />
+                <button mat-stroked-button (click)="join()" color="accent">Join</button>
+            </div>
+        </div>
+    </div>
+</div>

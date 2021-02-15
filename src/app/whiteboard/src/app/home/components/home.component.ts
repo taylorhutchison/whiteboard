@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { Router } from '@angular/router';
 import { FunctionsService } from 'src/app/shared/services/functions.service';
 
@@ -9,10 +9,23 @@ import { FunctionsService } from 'src/app/shared/services/functions.service';
 })
 export class HomeComponent implements OnInit {
 
+  @ViewChild('canvas')
+  canvas: ElementRef<HTMLCanvasElement>;
+
   roomid: string;
   constructor(private router: Router, private functionsService: FunctionsService) { }
 
   ngOnInit() { }
+
+  ngAfterViewInit() {
+    this.canvas.nativeElement.width = this.canvas.nativeElement.offsetWidth;
+    this.canvas.nativeElement.height = this.canvas.nativeElement.offsetHeight;
+    console.log(this.canvas.nativeElement);
+    const ctx = this.canvas.nativeElement.getContext('2d');
+    ctx.moveTo(0, 0);
+    ctx.lineTo(1000, 1000);
+    ctx.stroke();
+  }
 
   create() {
     this.functionsService.createRoom().subscribe(id => {
